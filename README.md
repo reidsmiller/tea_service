@@ -22,11 +22,11 @@ rails version: 7.0
 ### Add tea subscription to customer:
 ```(ruby)
 post '/api/v0/subscriptions' params: {
-  title: "Green Tea Subscription",
-  price: 10.51,
-  frequency: [weekly: 0, monthly: 1, bimonthly: 2]
-  customer_id: customer_id
-  tea_id: tea_id
+  title: <"Subscription Title in String">,
+  price: <price_in_float_format>,
+  frequency: weekly: <0>, monthly: <1>, bimonthly: <2>
+  customer_id: <customer_id>
+  tea_id: <tea_id>
 }
 ```
 
