@@ -61,4 +61,18 @@ RSpec.describe 'cancel subscription' do
       expect(response_body[:data][:attributes][:tea_id]).to eq(@tea1.id)
     end
   end
+
+  describe 'sad path' do
+    it 'returns 404 if subscription is not found' do
+      delete "/api/v0/subscriptions/0", headers: @headers
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(404)
+
+      response_body = JSON.parse(response.body, symbolize_names: true)
+
+      expect(response_body).to be_a(Hash)
+      expect(response_body[:errors][:detail]).to eq("Couldn't find Subscription with 'id'=0")
+    end
+  end
 end
