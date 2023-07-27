@@ -3,6 +3,5 @@ class Customer < ApplicationRecord
   validates_uniqueness_of :email, case_sensitive: false
 
   has_many :subscriptions
-  has_many :subscription_teas, through: :subscriptions
-  has_many :teas, through: :subscription_teas
+  has_many :teas, through: :subscriptions
 end
