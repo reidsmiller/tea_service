@@ -14,7 +14,7 @@ RSpec.describe 'cancel subscription' do
 
   describe 'happy path' do
     it 'can cancel a subscription' do
-      delete "/api/v0/subscriptions/#{@subscription1.id}", headers: @headers
+      delete "/api/v0/customers/#{@customer1[:id]}/subscriptions/#{@subscription1[:id]}", headers: @headers
 
       expect(response).to be_successful
       expect(response.status).to eq(200)
@@ -64,7 +64,7 @@ RSpec.describe 'cancel subscription' do
 
   describe 'sad path' do
     it 'returns 404 if subscription is not found' do
-      delete "/api/v0/subscriptions/0", headers: @headers
+      delete "/api/v0/customers/#{@customer1[:id]}/subscriptions/0", headers: @headers
 
       expect(response).to_not be_successful
       expect(response.status).to eq(404)
