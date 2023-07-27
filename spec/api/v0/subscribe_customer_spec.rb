@@ -13,7 +13,7 @@ RSpec.describe 'register new subscription' do
 
   describe 'happy path' do
     it 'can create a new subscription' do
-      post '/api/v0/subscriptions', params: {customer_id: @customer1.id, tea_id: @tea1.id, title: 'Green Tea Subscription', price: 10.00, frequency: 0}.to_json, headers: @headers
+      post '/api/v0/subscriptions', params: {customer_id: @customer1.id, tea_id: @tea1.id, title: 'Green Tea Subscription', price: 10.51, frequency: 0}.to_json, headers: @headers
 
       expect(response).to be_successful
       expect(response.status).to eq(201)
@@ -40,7 +40,7 @@ RSpec.describe 'register new subscription' do
 
       expect(response_body[:data][:attributes]).to have_key(:price)
       expect(response_body[:data][:attributes][:price]).to be_a(Float)
-      expect(response_body[:data][:attributes][:price]).to eq(10.00)
+      expect(response_body[:data][:attributes][:price]).to eq(10.51)
 
       expect(response_body[:data][:attributes]).to have_key(:status)
       expect(response_body[:data][:attributes][:status]).to be_a(String)
