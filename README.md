@@ -5,14 +5,14 @@
 ruby version: 3.1.1
 rails version: 7.0
 
-## Database Creation:
+### Database Creation:
 ```
   bundle install
 
   rails db:{create,migrate}
 ```
 
-## Run test suite:
+### Run test suite:
 ```
   bundle exec rspec spec
 ```
