@@ -7,7 +7,7 @@ rails version: 7.0
 
 ### MVP
 
-- Creates three endpoints for customer subscriptions:
+- Creates three endpoints for customer tea subscriptions:
   - Create subscription for customer
   - Deactivate subscription for customer
   - Get all subscriptions for a customer
