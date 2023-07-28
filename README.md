@@ -5,12 +5,23 @@
 ruby version: 3.1.1
 rails version: 7.0
 
+### MVP
+
+- Creates three endpoints for customer subscriptions:
+  - Create subscription for customer
+  - Deactivate subscription for customer
+  - Get all subscriptions for a customer
+
 ### Database Creation:
 ```
   bundle install
 
   rails db:{create,migrate}
 ```
+
+### Schema:
+
+<img width=98% alt="Database Diagram" src="https://github.com/reidsmiller/tea_service/assets/49500224/cbe6cca0-0379-4512-9b71-3f9d3b22140d">
 
 ### Run test suite:
 ```
